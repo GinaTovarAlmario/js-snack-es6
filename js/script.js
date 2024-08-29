@@ -69,12 +69,16 @@ const students = [
 
 const studentName = students.map(student =>{
   return student.name.toUpperCase();
-})
+});
 console.log('Lista nomi studenti :',studentName);
 
 // creo una lista per gli studenti con punteggio over70
-const over70ScoreStudents = students.filter(student =>{
-  if(student.grades > 70) return true;
-  return false;
-})
+const over70ScoreStudents = students.filter(student => student.grades > 70);
+// stampo in console
 console.log('studenti con punteggio sopra i 70: ',over70ScoreStudents);
+
+const specialCase = students.filter(student =>{
+  if(student.grades > 70 && student.id > 120) return true;
+  return false;
+});
+console.log('studenti con punteggio superiore a 70 e con id matricola superiore a 120: ', specialCase);
