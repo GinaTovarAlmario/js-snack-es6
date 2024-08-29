@@ -18,50 +18,23 @@ Generiamo e stampiamo in console la lista per i segnaposto.
 console.log('Js ok');
 // ho fatto un file a parte per le mie funzioni faccio il controllo
 window.addEventListener("load", (event) => {
-    console.log("page is fully loaded");
-  });
+  console.log("page is fully loaded");
+});
+
   // creo il mio array di invitati
 const vipGuests = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez',
   'Chiara Ferragni','George Clooney', 'Amal Clooney', 'Fedez', 'Amadeus', 'Fiorello'];
-const newVipList = [];
+  // creo un nuovo array che mi aiuterà ad aggiungere le proprietà
+const newVipLists = [];
 //  voglio aggiungere nuove proprieta per ogni elemento array
-
- vipGuests.forEach((vipGuest, i, arr)=>{
-    newVipList.push({tableName: 'TavoloVip', guestName: vipGuest, place: (i+1)})
- })
-console.log(newVipList);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+vipGuests.forEach((vipGuest, i, arr)=>{
+  newVipLists.push({
+    tableName: 'TavoloVip',
+    guestName: vipGuest,
+    place: (i+1)
+  })
+})
+console.log(newVipLists);
 
   /**
  * *SNACK 2*
