@@ -54,3 +54,27 @@ Id  Name                Grades
 102 Piero della Francesca   50
 120 Francesca da Polenta    84
  */
+
+// creo il mio array di oggetti
+console.log('secondo esercizio')
+const students = [
+  {id: 213 , name:'Marco della Rovere', grades: 78},
+  {id: 110 , name:'Paola Cortellessa', grades: 96},
+  {id: 250 , name:'Andrea Mantegna', grades: 48},
+  {id: 145 , name:'Gaia Borromini', grades: 74},
+  {id: 196 , name:'Luigi Grimaldello', grades: 68},
+  {id: 102 , name:'Piero della Francesca', grades: 50},
+  {id: 120 , name:'Francesca da Polenta', grades: 84},
+]
+
+const studentName = students.map(student =>{
+  return student.name.toUpperCase();
+})
+console.log('Lista nomi studenti :',studentName);
+
+// creo una lista per gli studenti con punteggio over70
+const over70ScoreStudents = students.filter(student =>{
+  if(student.grades > 70) return true;
+  return false;
+})
+console.log('studenti con punteggio sopra i 70: ',over70ScoreStudents);
