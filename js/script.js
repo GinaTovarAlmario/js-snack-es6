@@ -22,19 +22,21 @@ window.addEventListener("load", (event) => {
 });
 
   // creo il mio array di invitati
-const vipGuests = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez',
+const names = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez',
   'Chiara Ferragni','George Clooney', 'Amal Clooney', 'Fedez', 'Amadeus', 'Fiorello'];
-  // creo un nuovo array che mi aiuterà ad aggiungere le proprietà
-const newVipLists = [];
+  const table = 'Tavolo VIP';
+  console.log('PRIMO ESERCIZIO');
+  // creo un nuovo array che mi aiuterà ad aggiungere le proprietà uso allora map()
 //  voglio aggiungere nuove proprieta per ogni elemento array
-vipGuests.forEach((vipGuest, i, arr)=>{
-  newVipLists.push({
-    tableName: 'TavoloVip',
-    guestName: vipGuest,
-    place: (i+1)
-  })
-})
-console.log(newVipLists);
+const guestList = names.map((name, i)=>{
+  const guest = {
+    guestName: name,
+    tableName: table,
+    place: i+1
+  }
+  return guest;
+});
+console.log(guestList);
 
   /**
  * *SNACK 2*
@@ -67,18 +69,55 @@ const students = [
   {id: 120 , name:'Francesca da Polenta', grades: 84},
 ]
 
-const studentName = students.map(student =>{
+const studentPlate = students.map(student =>{
   return student.name.toUpperCase();
 });
-console.log('Lista nomi studenti :',studentName);
+console.log('Lista nomi per placca studenti:',studentPlate);
 
 // creo una lista per gli studenti con punteggio over70
 const over70ScoreStudents = students.filter(student => student.grades > 70);
 // stampo in console
 console.log('studenti con punteggio sopra i 70: ',over70ScoreStudents);
 
-const specialCase = students.filter(student =>{
-  if(student.grades > 70 && student.id > 120) return true;
+const specialCase = over70ScoreStudents.filter(student =>{
+  if(student.id > 120) return true;
   return false;
 });
 console.log('studenti con punteggio superiore a 70 e con id matricola superiore a 120: ', specialCase);
+
+/**SNACK 3*
+Creare un array di oggetti:
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+Stampare in console la bici con peso minore utilizzando destructuring e template literal*/
+console.log('TERZO ESERCIZIO');
+const raceBycicles = [
+  {name:'Giant Propel Advanced SL', weight:'8 KG'},
+  {name:'Scott Addict RC Ultimate', weight:'7 KG'},
+  {name:'Specialized S-Works Aethos', weight:'3 KG'},
+  {name:'Wilier Zero SLR', weight:'5 KG'},
+  {name:'Orbea Orca M10iLTD PWR', weight:'12 KG'},
+  {name:'Look 795 Blade RS', weight:'6 KG'},
+  {name:'Cube Litening Air C', weight:'11 KG'},
+  {name:'Bianchi Specialissima RC', weight:'10 KG'},
+  {name:'Trek Émonda SLR ', weight:'4 KG'},
+  {name:'Bmc Teammachine SLR ONE', weight:'14 KG'},
+];
+console.log(raceBycicles);
+// mi serve trovare il minimo valore di peso
+const weightBike =raceBycicles.map(raceBycicle => raceBycicle.weight);
+console.log('peso delle bici da corsa : ', weightBike);
+// devo trasformarlo ora in numeri
+const numberWeightBike = [];
+for(let i = 0; i < weightBike.length ; i++){
+  numberWeightBike.push(parseInt(weightBike[i]));
+}
+console.log('peso bici in numeri : ', numberWeightBike);
+
+/**SNACK 4*
+Creare un array di oggetti di squadre di calcio.
+Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+*BONUS*
+Stampare in pagina oltre che in console!*/
