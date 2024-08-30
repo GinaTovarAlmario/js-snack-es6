@@ -101,7 +101,7 @@ const raceBycicles = [
   {name:'Cube Litening Air C', weight:'11 KG'},
   {name:'Bianchi Specialissima RC', weight:'10 KG'},
   {name:'Trek Émonda SLR ', weight:'4 KG'},
-  {name:'Bmc Teammachine SLR ONE', weight:'14 KG'},
+  {name:'Bmc Teammachine SLR ONE', weight:'14 KG'}
 ];
 console.log(raceBycicles);
 
@@ -124,3 +124,12 @@ Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli su
 Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 *BONUS*
 Stampare in pagina oltre che in console!*/
+
+const teamSoccer = [
+  {name:'Milan', points: '0', fail:'0'},
+  {name:'Inter', points: '0', fail:'0'},
+  {name:'Napoli', points: '0', fail:'0'},
+  {name:'Torino', points: '0', fail:'0'},
+  {name:'Roma', points: '0', fail:'0'}
+
+];
