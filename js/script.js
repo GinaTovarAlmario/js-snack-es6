@@ -90,6 +90,7 @@ Creare un array di oggetti:
 Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 Stampare in console la bici con peso minore utilizzando destructuring e template literal*/
 console.log('TERZO ESERCIZIO');
+
 const raceBycicles = [
   {name:'Giant Propel Advanced SL', weight:'8 KG'},
   {name:'Scott Addict RC Ultimate', weight:'7 KG'},
@@ -103,15 +104,17 @@ const raceBycicles = [
   {name:'Bmc Teammachine SLR ONE', weight:'14 KG'},
 ];
 console.log(raceBycicles);
+
 // mi serve trovare il minimo valore di peso
-const weightBike =raceBycicles.map(raceBycicle => raceBycicle.weight);
-console.log('peso delle bici da corsa : ', weightBike);
-// devo trasformarlo ora in numeri
-const numberWeightBike = [];
-for(let i = 0; i < weightBike.length ; i++){
-  numberWeightBike.push(parseInt(weightBike[i]));
+let lighterBycicleIndex = -1;
+for(let i = 0; i < raceBycicles.length ; i++){
+  const {name,weight} = raceBycicles[i];
+  if( lighterBycicleIndex < 0 || parseInt(weight) < parseInt(raceBycicles[lighterBycicleIndex].weight)){
+    lighterBycicleIndex = i;
+  }
 }
-console.log('peso bici in numeri : ', numberWeightBike);
+console.log('La bicicletta più leggera è : ',raceBycicles[lighterBycicleIndex]);
+
 
 /**SNACK 4*
 Creare un array di oggetti di squadre di calcio.
