@@ -121,29 +121,32 @@ Creare un array di oggetti di squadre di calcio.
 Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
 Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
-Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti
+e stampiamo tutto in console.
 *BONUS*
 Stampare in pagina oltre che in console!*/
 console.log('ESERCIZIO QUATTRO');
 
 const teamsSoccer = [
-  {name:'Milan', points: '0', fail:'0'},
-  {name:'Inter', points: '0', fail:'0'},
-  {name:'Napoli', points: '0', fail:'0'},
-  {name:'Torino', points: '0', fail:'0'},
-  {name:'Roma', points: '0', fail:'0'}
+  {name:'Milan', points: '0', fails:'0'},
+  {name:'Inter', points: '0', fails:'0'},
+  {name:'Napoli', points: '0', fails:'0'},
+  {name:'Torino', points: '0', fails:'0'},
+  {name:'Roma', points: '0', fails:'0'}
 ];
 // mi preparo le mie varibili per poter generare dei numeri casuali con un min e un max
 // mi preparo una funzione per generare numeri random
 const min = 1;
 const max = 100;
+
 teamsSoccer.forEach(teamSoccer =>{
-  // let {points, fail} = teamsSoccer;
-  let number1 = getRandomNumber(min,max);
-  let number2 = getRandomNumber(min,max);
-  teamSoccer.points = number1;
-  teamSoccer.fail = number2;
+  let RandomNumberPoints = getRandomNumber(min,max);
+  let RandomNumberFails = getRandomNumber(min,max);
+  teamSoccer.points = RandomNumberPoints;
+  teamSoccer.fails = RandomNumberFails;
 })
 console.log(teamsSoccer);
-// const num = getRandomNumber(min,max);
-// console.log(num);
+// vado a crearmi un nuovo array di oggetti con solo punti e falli subiti
+const newArray = [];
+
+console.log('nuovo: ',newArray);
