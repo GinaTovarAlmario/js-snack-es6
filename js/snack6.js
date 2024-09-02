@@ -26,10 +26,5 @@ const animals = [
 ];
 console.log(animals);
 
-const mammals = animals.filter((element) =>{
-    if( element.classe === 'mammiferi'){
-        return true;
-    }
-    return false;
-});
+const mammals = animals.filter(element => element.classe === 'mammiferi');
 console.log(mammals);
