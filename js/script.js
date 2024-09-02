@@ -92,29 +92,32 @@ Stampare in console la bici con peso minore utilizzando destructuring e template
 console.log('TERZO ESERCIZIO');
 
 const raceBycicles = [
-  {name:'Giant Propel Advanced SL', weight:'8 KG'},
-  {name:'Scott Addict RC Ultimate', weight:'7 KG'},
-  {name:'Specialized S-Works Aethos', weight:'3 KG'},
-  {name:'Wilier Zero SLR', weight:'5 KG'},
-  {name:'Orbea Orca M10iLTD PWR', weight:'12 KG'},
-  {name:'Look 795 Blade RS', weight:'6 KG'},
-  {name:'Cube Litening Air C', weight:'11 KG'},
-  {name:'Bianchi Specialissima RC', weight:'10 KG'},
-  {name:'Trek Émonda SLR ', weight:'4 KG'},
-  {name:'Bmc Teammachine SLR ONE', weight:'14 KG'}
+  {name:'Giant Propel Advanced SL', weight: 8},
+  {name:'Scott Addict RC Ultimate', weight: 12},
+  {name:'Specialized S-Works Aethos', weight: 6},
+  {name:'Wilier Zero SLR', weight: 7},
+  {name:'Orbea Orca M10iLTD PWR', weight: 9},
+  {name:'Look 795 Blade RS', weight: 6},
+  {name:'Cube Litening Air C', weight:11},
+  {name:'Bianchi Specialissima RC', weight: 10},
+  {name:'Trek Émonda SLR ', weight: 4},
+  {name:'Bmc Teammachine SLR ONE', weight: 14}
 ];
 console.log(raceBycicles);
 
 // mi serve trovare il minimo valore di peso
-let lighterBycicleIndex = -1;
-for(let i = 0; i < raceBycicles.length ; i++){
-  const {name,weight} = raceBycicles[i];
-  if( lighterBycicleIndex < 0 || parseInt(weight) < parseInt(raceBycicles[lighterBycicleIndex].weight)){
-    lighterBycicleIndex = i;
+let lighterBycicle = raceBycicles[0];
+raceBycicles.forEach( raceBycicle =>{
+  // destructuring
+  const {weight} = raceBycicle
+  const {weight: lighterWeight} = lighterBycicle;
+  if(weight < lighterWeight){
+    lighterBycicle = raceBycicle;
   }
-}
-console.log('La bicicletta più leggera è : ',raceBycicles[lighterBycicleIndex]);
+});
+const {name, weight} = lighterBycicle;
 
+console.log(`La bicicletta più leggera è : ${name} con peso : ${weight}`);
 
 /**SNACK 4*
 Creare un array di oggetti di squadre di calcio.

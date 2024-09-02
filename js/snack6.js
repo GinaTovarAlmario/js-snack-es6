@@ -32,33 +32,33 @@ console.log(mammals); */
 // l'indicazione se può guidare, in base all'età.
 
 
-const persons = [
-    {nome:'maria', cognome:'rossi',età:'33'},
-    {nome:'luigi', cognome:'pippo',età:'13'},
-    {nome:'marco', cognome:'plutone',età:'25'},
-    {nome:'sveva', cognome:'abate',età:'18'},
-    {nome:'chiara', cognome:'dufour',età:'17'},
-    {nome:'dasha', cognome:'sole',età:'67'},
-    {nome:'mirko', cognome:'verdi',età:'78'},
-    {nome:'laura', cognome:'kogut',età:'66'},
-    {nome:'paolo', cognome:'bruzzo',età:'9'},
-    {nome:'dario', cognome:'dolores',età:'10'},
-    {nome:'luca', cognome:'carvajal',età:'17'},
-    {nome:'irene', cognome:'rosetta',età:'30'},
-    {nome:'alberto', cognome:'paperino',età:'19'},
-];
-console.log(persons);
+// const persons = [
+//     {nome:'maria', cognome:'rossi',età:'33'},
+//     {nome:'luigi', cognome:'pippo',età:'13'},
+//     {nome:'marco', cognome:'plutone',età:'25'},
+//     {nome:'sveva', cognome:'abate',età:'18'},
+//     {nome:'chiara', cognome:'dufour',età:'17'},
+//     {nome:'dasha', cognome:'sole',età:'67'},
+//     {nome:'mirko', cognome:'verdi',età:'78'},
+//     {nome:'laura', cognome:'kogut',età:'66'},
+//     {nome:'paolo', cognome:'bruzzo',età:'9'},
+//     {nome:'dario', cognome:'dolores',età:'10'},
+//     {nome:'luca', cognome:'carvajal',età:'17'},
+//     {nome:'irene', cognome:'rosetta',età:'30'},
+//     {nome:'alberto', cognome:'paperino',età:'19'},
+// ];
+// console.log(persons);
 
-// devo creare un nuovo array
-const newArray = persons.map((element) =>{
-    // for(let persona of persons){
-        const { nome, cognome, età} = element;
-        if(età >= 18){
-            element = `${nome} ${cognome} : ha ${età} e può guidare`;
-        } else {
-            element = `${nome} ${cognome} : ha ${età} e non può guidare`;
-        }
-    // }
-    return (element);
-});
-console.log(newArray);
+// // devo creare un nuovo array
+// const newArray = persons.map((element) =>{
+//     // for(let persona of persons){
+//         const { nome, cognome, età} = element;
+//         if(età >= 18){
+//             element = `${nome} ${cognome} : ha ${età} e può guidare`;
+//         } else {
+//             element = `${nome} ${cognome} : ha ${età} e non può guidare`;
+//         }
+//     // }
+//     return (element);
+// });
+// console.log(newArray);
