@@ -142,14 +142,15 @@ const teamsSoccer = [
 const min = 1;
 const max = 100;
 
-teamsSoccer.forEach(teamSoccer =>{
-  let RandomNumberPoints = getRandomNumber(min,max);
-  let RandomNumberFails = getRandomNumber(min,max);
-  teamSoccer.points = RandomNumberPoints;
-  teamSoccer.fails = RandomNumberFails;
-})
+for(let i = 0; i< teamsSoccer.length ; i++){
+  const team = teamsSoccer[i];
+  team.points = getRandomNumber(min,max);
+  team.fails = getRandomNumber(min,max);
+}
 console.log(teamsSoccer);
-// vado a crearmi un nuovo array di oggetti con solo punti e falli subiti
-const newArray = [];
+const newTeam = teamsSoccer.map( element =>{
+  const{ name, fails} = element;
+  return {name,fails};
+});
+console.log(newTeam);
 
-console.log('nuovo: ',newArray);
